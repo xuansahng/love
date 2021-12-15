@@ -508,7 +508,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('你曾说|春有风抚|夏有雨润|秋有果藏|冬有雪裹|可我想拥有|每个季节的你|I|LOVE|YOU|记得把歌听完|做我|女朋友吧|我的电脑|❤');
+      S.UI.simulate('❤|你曾说|春有风抚|夏有雨润|秋有果藏|冬有雪裹|可我想拥有|每个季节的你|I|LOVE|YOU|记得把歌听完|做我|女朋友吧|我的电脑');
     }
 
     S.Drawing.loop(function () {
@@ -528,7 +528,7 @@ S.Drawing = (function () {
                      window.oRequestAnimationFrame      ||
                      window.msRequestAnimationFrame     ||
                      function(callback) {
-                       window.setTimeout(callback, 1000000 / 60);
+                       window.setTimeout(callback, 1000000);
                      };
 
   return {
@@ -695,7 +695,7 @@ S.UI = (function () {
         default:
           S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'What?' : current));
       }
-    }, 5000, sequence.length);
+    }, 3000, sequence.length);
   }
 
   function checkInputWidth(e) {
